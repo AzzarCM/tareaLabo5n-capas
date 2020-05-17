@@ -16,38 +16,40 @@
 
         <h1>INGRESAR ALUMNO</h1>
         <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Nombre del producto</label>
+            <label for="name" class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" name="nombre" id="name" placeholder="Nombre Alumno">
-
+                <input type="text" class="form-control" th:field="*{nombre}" id="name" placeholder="Nombre Alumno">
+				 <span th:errors="*{nombre}" style=color:#FF0000></span><br>
             </div>
         </div>
         <div class="form-group row">
-            <label for="descripcion" class="col-sm-2 col-form-label">Descripcion</label>
+            <label for="descripcion" class="col-sm-2 col-form-label">Apellido</label>
             <div class="col-sm-6">
-                <input type="text" class="form-control" name="apellido" id="descripcion"
+                <input type="text" class="form-control" th:field="*{apellido}"id="descripcion"
                        placeholder="Apellido">
+					<span th:errors="*{apellido}" style=color:#FF0000></span><br>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="precio" class="col-sm-2 col-form-label">Carnet</label>
+            <div class="col-sm-6">
+                <input type="text"  class="form-control"  th:field="*{carne}" id="precio">
+                <span th:errors="*{carne}" style=color:#FF0000></span><br>
 
             </div>
         </div>
         <div class="form-group row">
-            <label for="precio" class="col-sm-2 col-form-label">Precio</label>
+            <label for="vencimiento" class="col-sm-2 col-form-label">Carrera</label>
             <div class="col-sm-6">
-                <input type="text"  class="form-control" name="carne" id="precio">
-
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="vencimiento" class="col-sm-2 col-form-label">Fecha de vencimiento</label>
-            <div class="col-sm-6">
-                <input type="text"  name="carrera" class="form-control" id="vencimiento">
+                <input type="text" th:field="*{carrera}" class="form-control" id="vencimiento">
+                <span th:errors="*{carrera}" style=color:#FF0000></span><br>
             </div>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Registrar Estudiante</button>
     </div>
-
+    <a href="/lista"  >Mostrar Lista</a>
 </form> <br>
-<a href="/lista"  >Mostrar Lista</a>
+
 
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

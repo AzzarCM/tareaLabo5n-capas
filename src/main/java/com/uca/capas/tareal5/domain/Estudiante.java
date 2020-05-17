@@ -1,8 +1,8 @@
 package com.uca.capas.tareal5.domain;
-
-import org.springframework.validation.annotation.Validated;
-
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(schema = "public", name = "estudiante")
@@ -11,22 +11,24 @@ public class Estudiante {
     @Column(name = "c_usuario")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
+    
     @Column(name = "nombre")
+    @NotEmpty(message = "El campo nombre no debe estar vacio")
     private String nombre;
+    
     @Column(name = "apellido")
+    @NotEmpty(message = "El campo Apellido no debe estar vacio")
     private String apellido;
+    
     @Column(name = "carne")
+    @NotEmpty(message = "El campo nombre no debe estar vacio")
     private String carne;
+    
     @Column(name = "carrera")
+    @NotEmpty(message = "El campo carrera no debe estar vacio")
     private String carrera;
+    
     public Estudiante(){}
-
-    public Estudiante(String nombre, String apellido, String carne, String carrera) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.carne = carne;
-        this.carrera = carrera;
-    }
 
     public Integer getCodigo() {
         return codigo;
